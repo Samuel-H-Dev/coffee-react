@@ -4,7 +4,12 @@ nav, .buttonGetDrink{
 }
 nav > button, .buttonGetDrink > button {
     padding: 10px;
+    border-radius: 10px;
+    border: none;
+    margin: 5px 5px;
 }
+
+
 h1, h2, h3, p{
     text-align: center;
 }
