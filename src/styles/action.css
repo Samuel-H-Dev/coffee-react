@@ -1,0 +1,4 @@
+.hover-effect:hover{
+    transform: scale(1.12);
+    transition: 500ms ease-in-out;
+}

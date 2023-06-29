@@ -23,36 +23,34 @@ export default function Beverage() {
                 <button onClick={() => { getBeverage("port") }}>Port</button>
 
             </nav>
-            <div>
-                <button onClick={ () => getDrink(Beverage)}>Get Drink</button>
+            <div className="buttonGetDrink">
+                <button onClick={() => getDrink(Beverage)}>Get Drink</button>
             </div>
 
-            <h2>{Beverage}</h2>
 
+            <div className="drinkContainer">
+                <h2>{Beverage}</h2>
+                <div className="drink-list">
+                    {
+                        !drinkList
+                            ? <p>Please select a beverage</p>
+                            : drinkList.map((element, index) => {
+                                return (
+                                    <div key={index} className="hover-effect">
+                                        <img src={element.image} alt="cover" />
 
-            <div className="drink-list">
-                {
-                    !drinkList
-                        ? <p>Please select a beverage</p>
-                        : drinkList.map( (element, index) => {
-                            return (
-                                <div key={index}>
-                                    <img src={element.image} alt="cover" />
-
-                                    <h3>{element.wine}</h3>
-                                    <p>Location: {element.location}</p>
-                                    <p>Rating: {element.rating.average}</p>
-                                    <p>Reviews: {element.rating.reviews}</p>
-                                </div>)
-
-                        }
-                        )
-
-                }
+                                        <h3>{element.wine}</h3>
+                                        <p>Location: {element.location}</p>
+                                        <p>Rating: {element.rating.average}</p>
+                                        <p>Reviews: {element.rating.reviews}</p>
+                                    </div>)
+                            })
+                    }
+                </div>
 
             </div>
 
         </section>
 
     )
-}
+}   
